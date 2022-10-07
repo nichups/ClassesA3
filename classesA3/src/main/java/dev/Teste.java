@@ -5,27 +5,19 @@
 package dev;
 
 /**
- * Importação de classes para criação de arrays associativos pela nomeação de
- * chaves
+ * Importação de bibliotecas chaves
  */
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.swing.JOptionPane;
 
 public class Teste {
 
     public static void main(String[] args) {
 
-        Map<String, String> info = new HashMap();
-
-        String nome1 = JOptionPane.showInputDialog("Nome do colaborador");
-
-        info.put("name", nome1);
-
         Colaboradores men = new Colaboradores();
-        men.setColaborador(info);
-        
+        String nome1 = JOptionPane.showInputDialog("Nome do colaborador");
+        String email1 = JOptionPane.showInputDialog("Email do colaborador");
+
+        men.setColaborador(nome1, email1, );
         men.mostrarColaborador();
 
     }

@@ -57,40 +57,41 @@ public class Colaboradores {
     /**
      * Getter de atributos do colaborador
      *
-     * @return
      */
-    public Map<String, String> getColaborador() {
-        // Cria um Array via import da HashMap, onde chaves e valores são do tipo String
-        Map<String, String> info = new HashMap();
-
+    public void getColaborador() {
         // coloca os dados no array
-        info.put("name", this.nome);
-        info.put("email", this.email);
-        info.put("fone", this.fone);
-        info.put("cpf", this.cpf);
-        info.put("funcao", this.funcao);
-        info.put("endereco", this.endereco);
-        info.put("salario", this.salario);
-        info.put("numHoras", this.numHoras);
-
-        return info;
+        System.out.println("O Nome do Colaborador é " + this.nome);
+        System.out.println("O Email do Colaborador é " + this.email);
+        System.out.println("O Telefone do Colaborador é " + this.fone);
+        System.out.println("O CPF do Colaborador é " + this.cpf);
+        System.out.println("O Função do Colaborador é " + this.funcao);
+        System.out.println("O Endereço do Colaborador é " + this.endereco);
+        System.out.println("O Salário do Colaborador é " + this.salario);
+        System.out.println("O Número de Horas do Colaborador é " + this.numHoras);
     }
 
     // SETTERS
     /**
      * Setter do nome do colaborador
      *
-     * @param info
+     * @param nome
+     * @param email
+     * @param fone
+     * @param cpf
+     * @param funcao
+     * @param endereco
+     * @param salario
+     * @param numHoras
      */
-    public void setColaborador(Map<String, String> info) {
-        this.nome = info.get("nome");
-        this.email = info.get("email");
-        this.fone = info.get("fone");
-        this.cpf = info.get("cpf");
-        this.funcao = info.get("funcao");
-        this.endereco = info.get("endereco");
-        this.salario = info.get("salario");
-        this.numHoras = info.get("numHoras");
+    public void setColaborador(String nome, String email, String fone, String cpf, String funcao, String endereco, String salario, String numHoras) {
+        this.nome = nome;
+        this.email = email;
+        this.fone = fone;
+        this.cpf = cpf;
+        this.funcao = funcao;
+        this.endereco = endereco;
+        this.salario = salario;
+        this.numHoras = numHoras;
     }
 
     // MÉTODOS
@@ -98,17 +99,14 @@ public class Colaboradores {
      * Método para mostrar colaborador
      */
     public void mostrarColaborador() {
-        // Chama a função getter de colaboradores para mostra-lo
-        Map<String, String> info = this.getColaborador();
-
-        System.out.println("Nome do Colaborador: " + info.get("name"));
-        System.out.println("Email do Colaborador: " + info.get("email"));
-        System.out.println("Telefone do Colaborador: " + info.get("fone"));
-        System.out.println("CPF do Colaborador: " + info.get("cpf"));
-        System.out.println("Função do Colaborador: " + info.get("funcao"));
-        System.out.println("Endereço do Colaborador: " + info.get("endereco"));
-        System.out.println("Salário do Colaborador: " + info.get("salario"));
-        System.out.println("Número de Horas do Colaborador: " + info.get("numHoras"));
+        System.out.println("Nome do Colaborador: " + this.nome);
+        System.out.println("Email do Colaborador: " + this.email);
+        System.out.println("Telefone do Colaborador: " + this.fone);
+        System.out.println("CPF do Colaborador: " + this.cpf);
+        System.out.println("Função do Colaborador: " + this.funcao);
+        System.out.println("Endereço do Colaborador: " + this.endereco);
+        System.out.println("Salário do Colaborador: " + this.salario);
+        System.out.println("Número de Horas do Colaborador: " + "numHoras");
     }
 
     /**
@@ -119,13 +117,17 @@ public class Colaboradores {
      */
     public boolean temAcesso(String[] funcao) {
         for (int i = 0; i < funcao.length; i++) {
-            if (funcao[i] == this.funcao) {
+            if (funcao[i] == this.funcao) { 
                 return true;
             } else {
                 return false;
             }
         }
         return false;
+    }
+
+    void setColaborador() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
