@@ -16,8 +16,14 @@ public class Teste {
         Colaboradores men = new Colaboradores();
         String nome1 = JOptionPane.showInputDialog("Nome do colaborador");
         String email1 = JOptionPane.showInputDialog("Email do colaborador");
+        String fone1 = JOptionPane.showInputDialog("Telefone do colaborador");
+        String cpf1 = JOptionPane.showInputDialog("CPF do colaborador");
+        String funcao1 = JOptionPane.showInputDialog("Função do colaborador");
+        String endereco1 = JOptionPane.showInputDialog("Endereço do colaborador");
+        String salario1 = JOptionPane.showInputDialog("Salário do colaborador");
+        String numHoras1 = JOptionPane.showInputDialog("Número de Horas do colaborador");
 
-        men.setColaborador(nome1, email1, );
+        men.setColaborador(nome1, email1, fone1, cpf1, funcao1, endereco1, salario1, numHoras1);
         men.mostrarColaborador();
 
     }
