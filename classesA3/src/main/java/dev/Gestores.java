@@ -16,4 +16,8 @@ public class Gestores extends Colaboradores{
 		this.numeroDeEquipesDirigindo = numeroDeEquipesDirigindo;
 	}
 
+	 public void mostrarGestor() {
+	        System.out.println("Numero de equipes que o gestor admnistra: " + this.numeroDeEquipesDirigindo);
+	}
+	
 }

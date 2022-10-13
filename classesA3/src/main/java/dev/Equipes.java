@@ -30,6 +30,13 @@ public class Equipes {
 
     public void setFuncao(String funcao) {
         this.funcao = funcao;
-    }
 
+    }
+    
+    public void mostrarEquipe() {
+        System.out.println("Função da equipe: " + this.funcao);
+        System.out.println("Numero de funcionários dentro da equipe: " + this.nFuncionarios);
+
+    }
+    
 }

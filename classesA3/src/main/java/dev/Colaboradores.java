@@ -4,13 +4,6 @@
  */
 package dev;
 
-/**
- * Importação de classes para criação de arrays associativos pela nomeação de
- * chaves
- */
-import java.util.HashMap;
-import java.util.Map;
-
 public class Colaboradores {
 
     /**
@@ -83,7 +76,8 @@ public class Colaboradores {
      * @param salario
      * @param numHoras
      */
-    public void setColaborador(String nome, String email, String fone, String cpf, String funcao, String endereco, String salario, String numHoras) {
+    public void setColaborador(String nome, String email, String fone, String cpf, String funcao, String endereco,
+            String salario, String numHoras) {
         this.nome = nome;
         this.email = email;
         this.fone = fone;
@@ -117,7 +111,7 @@ public class Colaboradores {
      */
     public boolean temAcesso(String[] funcao) {
         for (int i = 0; i < funcao.length; i++) {
-            if (funcao[i] == this.funcao) { 
+            if (funcao[i] == this.funcao) {
                 return true;
             } else {
                 return false;
@@ -127,7 +121,8 @@ public class Colaboradores {
     }
 
     void setColaborador() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
