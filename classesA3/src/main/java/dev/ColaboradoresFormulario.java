@@ -16,8 +16,16 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
      * Creates new form ColaboradoresFormulario
      */
     public ColaboradoresFormulario() {
+        setOper('A');
         initComponents();
     }
+
+    /**
+     * # Atributo de validação de ação no formulário
+     * - C = criar usuário;
+     * - A = alterar usuário;
+     */
+    private char oper = 'C';
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,7 +64,12 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         title.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        title.setText("Cadastro de Usuários");
+
+        if (this.oper == 'C') {
+            title.setText("Cadastro de Usuários");
+        } else if (this.oper == 'A') {
+            title.setText("Atualização de Cadastro");
+        }
 
         user_nome.setText("Insira o nome do usuário");
         user_nome.addActionListener(new java.awt.event.ActionListener() {
@@ -150,12 +163,21 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
 
         btn_cancelar.setText("CANCELAR");
 
-        btn_cadastrar.setText("CADASTRAR");
-        btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cadastrarActionPerformed(evt);
-            }
-        });
+        if (this.oper == 'A') {
+            btn_cadastrar.setText("ATUALIZAR");
+            btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn_cadastrarAtualizarActionPerformed(evt);
+                }
+            });
+        } else if (this.oper == 'C') {
+            btn_cadastrar.setText("CADASTRAR");
+            btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn_cadastrarActionPerformed(evt);
+                }
+            });
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -360,6 +382,15 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
     }// GEN-LAST:event_user_salarioActionPerformed
 
     /**
+     * Método de Definição de Operação do Formulário
+     * 
+     * @param $info
+     */
+    private void setOper(char $info) {
+        this.oper = $info;
+    }
+
+    /**
      * Botão de Cadastro de Novos Usuários
      * 
      * @param evt
@@ -379,7 +410,7 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
          * Registro de Telefone do Colaborador
          */
         String fone = user_fone.getText();
-        
+
         /**
          * Registro de CPF do Colaborador
          */
@@ -389,7 +420,7 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
          * Registro de Endereço do Colaborador
          */
         String endereco = user_endereco.getText();
-        
+
         /**
          * Registro do Número de Horas do Colaborador
          */
@@ -405,6 +436,58 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         // String funcao_colaborador = user_funcao_colaborador.getText();
         // String funcao_gestor = user_funcao_gestor.getText();
 
+        System.out.println("CRIAR");
+        System.out.println("new nome: " + nome);
+        System.out.println("new salario: " + salario);
+    }// GEN-LAST:event_btn_cadastrarActionPerformed
+
+    /**
+     * Botão de Cadastro de Novos Usuários
+     * 
+     * @param evt
+     */
+    private void btn_cadastrarAtualizarActionPerformed(java.awt.event.ActionEvent evt) {
+        /**
+         * Registro do Nome do Colaborador
+         */
+        String nome = user_nome.getText();
+
+        /**
+         * Registro de Email do Colaborador
+         */
+        String email = user_email.getText();
+
+        /**
+         * Registro de Telefone do Colaborador
+         */
+        String fone = user_fone.getText();
+
+        /**
+         * Registro de CPF do Colaborador
+         */
+        String cpf = user_cpf.getText();
+
+        /**
+         * Registro de Endereço do Colaborador
+         */
+        String endereco = user_endereco.getText();
+
+        /**
+         * Registro do Número de Horas do Colaborador
+         */
+        String numHoras = user_numHoras.getText();
+
+        /**
+         * Registro de Salário do Colaborador
+         */
+        String salario = user_salario.getText();
+
+        // String funcao_group = user_funcao_group.getText();
+        // String funcao_adm = user_funcao_adm.getText();
+        // String funcao_colaborador = user_funcao_colaborador.getText();
+        // String funcao_gestor = user_funcao_gestor.getText();
+
+        System.out.println("ATUALIZAR");
         System.out.println("new nome: " + nome);
         System.out.println("new salario: " + salario);
     }// GEN-LAST:event_btn_cadastrarActionPerformed
