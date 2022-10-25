@@ -71,18 +71,18 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="user_fone_label1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="user_fone1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="user_endereco_label" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="user_endereco" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="user_cpf1" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="user_cpf_label1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="user_numHoras" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="user_numHoras_label" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="user_cpf_label2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="user_cpf2" max="32767" attributes="0"/>
+                                  <Component id="user_salario_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="user_salario" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -144,19 +144,19 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="user_fone_label1" min="-2" max="-2" attributes="0"/>
+                      <Component id="user_endereco_label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="user_fone1" min="-2" max="-2" attributes="0"/>
+                      <Component id="user_endereco" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="user_cpf_label1" min="-2" max="-2" attributes="0"/>
+                      <Component id="user_numHoras_label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="user_cpf1" min="-2" max="-2" attributes="0"/>
+                      <Component id="user_numHoras" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="user_cpf_label2" min="-2" max="-2" attributes="0"/>
+                      <Component id="user_salario_label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="user_cpf2" min="-2" max="-2" attributes="0"/>
+                      <Component id="user_salario" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -211,9 +211,6 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="user_funcao_colaborador">
       <Properties>
-        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="user_funcao_group"/>
         </Property>
@@ -226,9 +223,6 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="user_funcao_gestor">
       <Properties>
-        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="user_funcao_group"/>
         </Property>
@@ -240,9 +234,6 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="user_funcao_adm">
       <Properties>
-        <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="user_funcao_group"/>
         </Property>
@@ -264,9 +255,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Telefone"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Telefone"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="javax.swing.JTextField" name="user_cpf">
       <Properties>
@@ -281,41 +269,41 @@
         <Property name="text" type="java.lang.String" value="CPF"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="user_fone1">
+    <Component class="javax.swing.JTextField" name="user_endereco">
       <Properties>
         <Property name="text" type="java.lang.String" value="Insira o endere&#xe7;o do usu&#xe1;rio"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="user_fone1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="user_enderecoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="user_fone_label1">
+    <Component class="javax.swing.JLabel" name="user_endereco_label">
       <Properties>
         <Property name="text" type="java.lang.String" value="Endere&#xe7;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="user_cpf1">
+    <Component class="javax.swing.JTextField" name="user_numHoras">
       <Properties>
         <Property name="text" type="java.lang.String" value="Insira o tempo dispon&#xed;vel"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="user_cpf1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="user_numHorasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="user_cpf_label1">
+    <Component class="javax.swing.JLabel" name="user_numHoras_label">
       <Properties>
         <Property name="text" type="java.lang.String" value="N&#xfa;mero de Horas"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="user_cpf2">
+    <Component class="javax.swing.JTextField" name="user_salario">
       <Properties>
-        <Property name="text" type="java.lang.String" value="R$ #.###,##"/>
+        <Property name="text" type="java.lang.String" value="Pretens&#xe3;o"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="user_cpf2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="user_salarioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="user_cpf_label2">
+    <Component class="javax.swing.JLabel" name="user_salario_label">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sal&#xe1;rio"/>
       </Properties>
@@ -329,6 +317,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="CADASTRAR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cadastrarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
