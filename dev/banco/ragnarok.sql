@@ -22,6 +22,7 @@ CREATE TABLE Colaboradores
   funcao VARCHAR(50) NOT NULL,
   endereco VARCHAR(50) NOT NULL,
   salario DECIMAL(9,2) NOT NULL,
+  senha VARCHAR(50) NOT NULL,
   numHoras DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
