@@ -1,10 +1,10 @@
 --
--- Banco de dados: `Ragnarok`
+-- Banco de dados: `usjt_ragnarok`
 --
 
-CREATE DATABASE Ragnarok;
+CREATE DATABASE usjt_ragnarok;
 
-USE Ragnarok;
+USE usjt_ragnarok;
 
 -- --------------------------------------------------------
 
@@ -30,8 +30,8 @@ CREATE TABLE Colaboradores
 -- Inserindo dados da tabela `Colaboradores`
 --
 
-INSERT INTO Colaboradores (nome, email, fone, cpf, funcao, endereco, salario, numHoras)
-  VALUES ('Victor Men', 'victinReiDelas@gmai.com', '40028922', '44856754811', 'garoto_de_programa', 'Av. das Catiorinha', '2.00', '2022-09-05');
+INSERT INTO Colaboradores (nome, email, fone, cpf, funcao, endereco, salario, senha, numHoras)
+  VALUES ('Victor Men', 'victinReiDelas@gmai.com', '40028922', '44856754811', 'garoto_de_programa', 'Av. das Catiorinha', '2.00', 'Teste', '2022-09-05');
 
 -- --------------------------------------------------------
 

@@ -4,7 +4,15 @@
  */
 package dev;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
 public class Colaboradores {
+
+    /**
+     * Código do Colaborador
+     */
+    public int codigo;
 
     /**
      * Nome do Colaborador
@@ -39,14 +47,15 @@ public class Colaboradores {
     /**
      * Salario do Colaboradpr
      */
-    public String salario;
+    public Double salario;
 
     /**
-     * Número de horas do Colaborador
+     * Horas de trabalho do Colaborador
      */
-    public String numHoras; // 0000-00-00 00:00:00
+    public int numHoras;
 
-    // GETTERS
+    // -- GETTERS
+
     /**
      * Getter de atributos do colaborador
      *
@@ -63,32 +72,163 @@ public class Colaboradores {
         System.out.println("O Número de Horas do Colaborador é " + this.numHoras);
     }
 
-    // SETTERS
     /**
-     * Setter do nome do colaborador
+     * Getter Codigo
      *
+     * @return
+     */
+    public int getCodigo() {
+        return this.codigo;
+    }
+
+    /**
+     * Getter Nome
+     *
+     * @return
+     */
+    public String getNome() {
+        return this.nome;
+    }
+
+    /**
+     * Getter Email
+     *
+     * @return
+     */
+    public String getEmail() {
+        return this.email;
+    }
+
+    /**
+     * Getter Fone
+     *
+     * @return
+     */
+    public String getFone() {
+        return this.fone;
+    }
+
+    /**
+     * Getter Cpf
+     *
+     * @return
+     */
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    /**
+     * Getter Funcao
+     *
+     * @return
+     */
+    public String getFuncao() {
+        return this.funcao;
+    }
+
+    /**
+     * Getter Endereco
+     *
+     * @return
+     */
+    public String getEndereco() {
+        return this.endereco;
+    }
+
+    /**
+     * Getter Salario
+     *
+     * @return
+     */
+    public Double getSalario() {
+        return this.salario;
+    }
+
+    /**
+     * Getter NumHoras
+     *
+     * @return
+     */
+    public int getNumHoras() {
+        return this.numHoras;
+    }
+
+    // -- SETTERS
+
+    /**
+     * Setters Nome
+     * 
      * @param nome
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * Setters Email
+     * 
      * @param email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * Setters Fone
+     * 
      * @param fone
+     */
+    public void setFone(String fone) {
+        this.fone = fone;
+    }
+
+    /**
+     * Setters Cpf
+     * 
      * @param cpf
+     */
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    /**
+     * Setters Funcao
+     * 
      * @param funcao
+     */
+    public void setFuncao(String funcao) {
+        this.funcao = funcao;
+    }
+
+    /**
+     * Setters Endereco
+     * 
      * @param endereco
+     */
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    /**
+     * Setters Salario
+     * 
      * @param salario
+     */
+    public void setSalario(Double salario) {
+        this.salario = salario;
+    }
+
+    /**
+     * Setters NumHoras
+     * 
      * @param numHoras
      */
-    public void setColaborador(String nome, String email, String fone, String cpf, String funcao, String endereco,
-            String salario, String numHoras) {
-        this.nome = nome;
-        this.email = email;
-        this.fone = fone;
-        this.cpf = cpf;
-        this.funcao = funcao;
-        this.endereco = endereco;
-        this.salario = salario;
+    public void setNumHoras(int numHoras) {
         this.numHoras = numHoras;
     }
 
-    // MÉTODOS
+    // -- MÉTODOS
+
     /**
      * Método para mostrar colaborador
      */
@@ -120,9 +260,34 @@ public class Colaboradores {
         return false;
     }
 
-    void setColaborador() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from
-                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    /**
+     * Método de inserção de usuário no banco de dados
+     */
+    public void inserir(String senha) {
+        // 1: Definir o comando SQL
+        String sql = "INSERT INTO Colaboradores (nome, email, fone, cpf, funcao, endereco, salario, senha, numHoras) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        // 2: Abrir uma conexão
+        ConnectionFactory factory = new ConnectionFactory();
+        try (Connection c = factory.obtemConexao()) {
+            // 3: Pré compila o comando
+            PreparedStatement ps = c.prepareStatement(sql);
+            // 4: Define os valores pela posição
+            ps.setString(1, this.nome);
+            ps.setString(2, this.email);
+            ps.setString(3, this.fone);
+            ps.setString(4, this.cpf);
+            ps.setString(5, this.funcao);
+            ps.setString(6, this.endereco);
+            ps.setDouble(7, this.salario);
+            ps.setString(8, senha);
+            ps.setInt(9, this.numHoras);
+            // 5: Executa o comando
+            ps.execute();
+            // 6: Finaliza o comando
+            ps.close();
+        } catch (Exception e) {
+            // 7: Validação de erro
+            e.printStackTrace();
+        }
     }
-
 }

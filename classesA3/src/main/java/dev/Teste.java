@@ -12,60 +12,56 @@ import javax.swing.JOptionPane;
 public class Teste {
 
     public static void main(String[] args) {
-        int contColabs, contEquipes, contGestores, contTarefas, maxColabs, maxEquipes, maxGestores, maxTarefas;
-        String nome1, email1, fone1, cpf1, funcao1, endereco1, salario1, numHoras1,
-                nFuncs1, numEquipesDirigindo1, prazoDeEntrega1, descricao1;
+        String nome, email, fone, cpf, funcao, endereco, senha;
+        Double salario;
+        String menu = "1-Cadastrar\n2-Atualizar\n3-Apagar\n4-Listar\n5-Testar Conexão\n0-Sair";
 
-        Colaboradores Colab1 = new Colaboradores();
-        Equipes Equipe1 = new Equipes();
-        Gestores Gestor1 = new Gestores();
-        Tarefas Tarefa1 = new Tarefas();
+        int op, numHoras;
 
-        contColabs = 0;
-        contEquipes = 0;
-        contGestores = 0;
-        contTarefas = 0;
+        do {
+            op = Integer.parseInt(JOptionPane.showInputDialog(menu));
+            switch (op) {
+                case 1: {
+                    nome = JOptionPane.showInputDialog("Nome do colaborador");
+                    email = JOptionPane.showInputDialog("Email do colaborador");
+                    senha = JOptionPane.showInputDialog("Senha de acesso");
+                    fone = JOptionPane.showInputDialog("Telefone do colaborador");
+                    cpf = JOptionPane.showInputDialog("CPF do colaborador");
+                    funcao = JOptionPane.showInputDialog("Função do colaborador");
+                    endereco = JOptionPane.showInputDialog("Endereço do colaborador");
+                    salario = Double.valueOf(JOptionPane.showInputDialog("Salário do colaborador"));
+                    numHoras = Integer.parseInt(JOptionPane.showInputDialog("Número de Horas do colaborador"));
 
-        maxColabs = Integer.parseInt(JOptionPane.showInputDialog("Maximo de colaboradores"));
-        maxEquipes = Integer.parseInt(JOptionPane.showInputDialog("Maximo de equipes"));
-        maxGestores = Integer.parseInt(JOptionPane.showInputDialog("Maximo de gestores"));
-        maxTarefas = Integer.parseInt(JOptionPane.showInputDialog("Maximo de tarefas"));
+                    Colaboradores p = new Colaboradores();
+                    p.setNome(nome);
+                    p.setEmail(email);
+                    p.setFone(fone);
+                    p.setCpf(cpf);
+                    p.setFuncao(funcao);
+                    p.setEndereco(endereco);
+                    p.setSalario(salario);
+                    p.setNumHoras(numHoras);
 
-        while (contColabs < maxColabs) {
-            nome1 = JOptionPane.showInputDialog("Nome do colaborador");
-            email1 = JOptionPane.showInputDialog("Email do colaborador");
-            fone1 = JOptionPane.showInputDialog("Telefone do colaborador");
-            cpf1 = JOptionPane.showInputDialog("CPF do colaborador");
-            funcao1 = JOptionPane.showInputDialog("Função do colaborador");
-            endereco1 = JOptionPane.showInputDialog("Endereço do colaborador");
-            salario1 = JOptionPane.showInputDialog("Salário do colaborador");
-            numHoras1 = JOptionPane.showInputDialog("Número de Horas do colaborador");
+                    p.inserir(senha);
+                    break;
+                }
 
-            Colab1.setColaborador(nome1, email1, fone1, cpf1, funcao1, endereco1, salario1, numHoras1);
-            Colab1.mostrarColaborador();
-            contColabs++;
-        }
-
-        while (contEquipes < maxEquipes) {
-            funcao1 = JOptionPane.showInputDialog("Função da equipe");
-            nFuncs1 = JOptionPane.showInputDialog("Numero de funcionarios da equipe");
-            // Salvar na classe pelo set e mostrar pelo get
-
-            contEquipes++;
-        }
-        while (contGestores < maxGestores) {
-            numEquipesDirigindo1 = JOptionPane.showInputDialog("Numero de equipes que o gestor admnistra");
-            // Salvar na classe pelo set e mostrar pelo get
-
-            contGestores++;
-        }
-        while (contTarefas < maxTarefas) {
-            prazoDeEntrega1 = JOptionPane.showInputDialog("Prazo da entrega da tarefa");
-            descricao1 = JOptionPane.showInputDialog("Descrição da entrega");
-            // Salvar na classe pelo set e mostrar pelo get
-
-            contTarefas++;
-        }
-
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    ConnectionFactory connect = new ConnectionFactory();
+                    connect.testConnection();
+                    break;
+                case 0:
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
+            }
+        } while (op != 0);
     }
+
 }

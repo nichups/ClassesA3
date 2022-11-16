@@ -16,7 +16,7 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
      * Creates new form ColaboradoresFormulario
      */
     public ColaboradoresFormulario() {
-        setOper('A');
+        setOper('C');
         initComponents();
     }
 
