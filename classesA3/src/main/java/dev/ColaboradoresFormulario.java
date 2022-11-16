@@ -37,6 +37,7 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        System.out.println("Operação Solicitada: " + this.oper);
 
         user_funcao_group = new javax.swing.ButtonGroup();
         title = new javax.swing.JLabel();
@@ -384,10 +385,10 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
     /**
      * Método de Definição de Operação do Formulário
      * 
-     * @param $info
+     * @param $oper
      */
-    private void setOper(char $info) {
-        this.oper = $info;
+    public void setOper(char $oper) {
+        this.oper = $oper;
     }
 
     /**
@@ -424,17 +425,24 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         /**
          * Registro do Número de Horas do Colaborador
          */
-        String numHoras = user_numHoras.getText();
+        int numHoras = Integer.parseInt(user_numHoras.getText());
 
         /**
          * Registro de Salário do Colaborador
          */
-        String salario = user_salario.getText();
+        Double salario = Double.valueOf(user_salario.getText());
 
-        // String funcao_group = user_funcao_group.getText();
-        // String funcao_adm = user_funcao_adm.getText();
-        // String funcao_colaborador = user_funcao_colaborador.getText();
-        // String funcao_gestor = user_funcao_gestor.getText();
+        Colaboradores p = new Colaboradores();
+        p.setNome(nome);
+        p.setEmail(email);
+        p.setFone(fone);
+        p.setCpf(cpf);
+        p.setFuncao("teste");
+        p.setEndereco(endereco);
+        p.setSalario(salario);
+        p.setNumHoras(numHoras);
+
+        p.inserir("Teste@22");
 
         System.out.println("CRIAR");
         System.out.println("new nome: " + nome);
@@ -475,17 +483,24 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         /**
          * Registro do Número de Horas do Colaborador
          */
-        String numHoras = user_numHoras.getText();
+        int numHoras = Integer.parseInt(user_numHoras.getText());
 
         /**
          * Registro de Salário do Colaborador
          */
-        String salario = user_salario.getText();
+        Double salario = Double.valueOf(user_salario.getText());
 
-        // String funcao_group = user_funcao_group.getText();
-        // String funcao_adm = user_funcao_adm.getText();
-        // String funcao_colaborador = user_funcao_colaborador.getText();
-        // String funcao_gestor = user_funcao_gestor.getText();
+        Colaboradores p = new Colaboradores();
+        p.setNome(nome);
+        p.setEmail(email);
+        p.setFone(fone);
+        p.setCpf(cpf);
+        p.setFuncao("teste");
+        p.setEndereco(endereco);
+        p.setSalario(salario);
+        p.setNumHoras(numHoras);
+
+        // p.atualizar("Teste@22");
 
         System.out.println("ATUALIZAR");
         System.out.println("new nome: " + nome);
