@@ -23,7 +23,7 @@ CREATE TABLE Colaboradores
   endereco VARCHAR(50) NOT NULL,
   salario DECIMAL(9,2) NOT NULL,
   senha VARCHAR(50) NOT NULL,
-  numHoras DATETIME DEFAULT CURRENT_TIMESTAMP
+  numHoras int(2) NOT NULL
 );
 
 --
@@ -31,7 +31,7 @@ CREATE TABLE Colaboradores
 --
 
 INSERT INTO Colaboradores (nome, email, fone, cpf, funcao, endereco, salario, senha, numHoras)
-  VALUES ('Victor Men', 'victinReiDelas@gmai.com', '40028922', '44856754811', 'garoto_de_programa', 'Av. das Catiorinha', '2.00', 'Teste', '2022-09-05');
+  VALUES ('Victor Men', 'victinReiDelas@gmai.com', '40028922', '44856754811', 'garoto_de_programa', 'Av. das Catiorinha', '2.00', 'Teste', '8');
 
 -- --------------------------------------------------------
 
