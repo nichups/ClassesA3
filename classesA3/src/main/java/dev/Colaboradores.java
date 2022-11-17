@@ -45,6 +45,11 @@ public class Colaboradores {
      * Número de horas do Colaborador
      */
     public String numHoras; // 0000-00-00 00:00:00
+    
+    /**
+     * Senha do Colaboradpr
+     */
+    public String senha;
 
     // GETTERS
     /**
@@ -61,6 +66,7 @@ public class Colaboradores {
         System.out.println("O Endereço do Colaborador é " + this.endereco);
         System.out.println("O Salário do Colaborador é " + this.salario);
         System.out.println("O Número de Horas do Colaborador é " + this.numHoras);
+        System.out.println("A Senha do Colaborador é " + this.senha);
     }
 
     // SETTERS
@@ -86,6 +92,7 @@ public class Colaboradores {
         this.endereco = endereco;
         this.salario = salario;
         this.numHoras = numHoras;
+        this.senha = senha;
     }
 
     // MÉTODOS
@@ -101,6 +108,7 @@ public class Colaboradores {
         System.out.println("Endereço do Colaborador: " + this.endereco);
         System.out.println("Salário do Colaborador: " + this.salario);
         System.out.println("Número de Horas do Colaborador: " + "numHoras");
+        System.out.println("Senha do Colaborador: " + this.senha);
     }
 
     /**
