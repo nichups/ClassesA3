@@ -7,6 +7,8 @@ package dev;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import javax.swing.JOptionPane;
+
 public class Colaboradores {
 
     /**
@@ -52,7 +54,12 @@ public class Colaboradores {
     /**
      * Horas de trabalho do Colaborador
      */
-    public String numHoras; // 0000-00-00 00:00:00
+    public int numHoras;
+
+    /**
+     * Senha do Colaboradpr
+     */
+    public String senha;
 
     // GETTERS
     /**
@@ -154,10 +161,9 @@ public class Colaboradores {
     }
 
     // -- SETTERS
-
     /**
      * Setters Nome
-     * 
+     *
      * @param nome
      */
     public void setNome(String nome) {
@@ -166,7 +172,7 @@ public class Colaboradores {
 
     /**
      * Setters Email
-     * 
+     *
      * @param email
      */
     public void setEmail(String email) {
@@ -175,7 +181,7 @@ public class Colaboradores {
 
     /**
      * Setters Fone
-     * 
+     *
      * @param fone
      */
     public void setFone(String fone) {
@@ -184,7 +190,7 @@ public class Colaboradores {
 
     /**
      * Setters Cpf
-     * 
+     *
      * @param cpf
      */
     public void setCpf(String cpf) {
@@ -193,7 +199,7 @@ public class Colaboradores {
 
     /**
      * Setters Funcao
-     * 
+     *
      * @param funcao
      */
     public void setFuncao(String funcao) {
@@ -202,7 +208,7 @@ public class Colaboradores {
 
     /**
      * Setters Endereco
-     * 
+     *
      * @param endereco
      */
     public void setEndereco(String endereco) {
@@ -211,7 +217,7 @@ public class Colaboradores {
 
     /**
      * Setters Salario
-     * 
+     *
      * @param salario
      */
     public void setSalario(Double salario) {
@@ -220,16 +226,23 @@ public class Colaboradores {
 
     /**
      * Setters NumHoras
-     * 
+     *
      * @param numHoras
      */
     public void setNumHoras(int numHoras) {
         this.numHoras = numHoras;
+    }
+
+    /**
+     * Setters Senha
+     *
+     * @param senha
+     */
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 
     // -- MÉTODOS
-
     /**
      * Método para mostrar colaborador
      */
@@ -270,7 +283,7 @@ public class Colaboradores {
         String sql = "INSERT INTO Colaboradores (nome, email, fone, cpf, funcao, endereco, salario, senha, numHoras) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         // 2: Abrir uma conexão
         ConnectionFactory factory = new ConnectionFactory();
-        try (Connection c = factory.obtemConexao()) {
+        try ( Connection c = factory.obtemConexao()) {
             // 3: Pré compila o comando
             PreparedStatement ps = c.prepareStatement(sql);
             // 4: Define os valores pela posição
@@ -287,8 +300,13 @@ public class Colaboradores {
             ps.execute();
             // 6: Finaliza o comando
             ps.close();
+            // 6.1: Mostra mensagem caso criado
+            if (c != null) {
+                JOptionPane.showMessageDialog(null, "Colaborador cadastrado com sucesso");
+            }
         } catch (Exception e) {
             // 7: Validação de erro
+            JOptionPane.showMessageDialog(null, "Houve um erro ao criar a colaborador");
             e.printStackTrace();
         }
     }

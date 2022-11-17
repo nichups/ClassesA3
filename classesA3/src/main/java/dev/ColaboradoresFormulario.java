@@ -4,6 +4,9 @@
  */
 package dev;
 
+import java.awt.event.ActionEvent;
+
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -12,10 +15,13 @@ import javax.swing.JTextField;
  */
 public class ColaboradoresFormulario extends javax.swing.JFrame {
 
+    private Colaboradores infoColaborador;
+
     /**
      * Creates new form ColaboradoresFormulario
      */
     public ColaboradoresFormulario() {
+        infoColaborador = new Colaboradores();
         setOper('C');
         initComponents();
     }
@@ -35,9 +41,10 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        System.out.println("Operação Solicitada: " + this.oper);
 
         user_funcao_group = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
@@ -70,13 +77,11 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 100, Short.MAX_VALUE));
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 100, Short.MAX_VALUE));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -118,6 +123,7 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
 
         user_funcao_group.add(user_funcao_gestor);
         user_funcao_gestor.setText("Gestor");
+        user_funcao_gestor.setToolTipText("");
         user_funcao_gestor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 user_funcao_gestorActionPerformed(evt);
@@ -126,6 +132,7 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
 
         user_funcao_group.add(user_funcao_adm);
         user_funcao_adm.setText("Administrador");
+        user_funcao_adm.setToolTipText("");
         user_funcao_adm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 user_funcao_admActionPerformed(evt);
@@ -198,127 +205,222 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
-                .addComponent(title)
-                .addGap(105, 105, 105))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(user_nome_label)
-                                        .addComponent(user_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(user_email_label)
-                                        .addComponent(user_email, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(user_funcao_label)
-                                        .addComponent(user_funcao_colaborador)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(user_fone_label)
-                                        .addComponent(user_fone, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(user_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(user_cpf_label))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(user_funcao_gestor)
-                                        .addComponent(user_funcao_adm)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(user_endereco_label)
-                                        .addComponent(user_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(user_numHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(user_numHoras_label))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(user_salario_label)
-                                        .addComponent(user_salario))))
-                            .addComponent(user_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(107, Short.MAX_VALUE)
+                                .addComponent(title)
+                                .addGap(105, 105, 105))
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(41, 41, 41)
+                                                .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 200,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(41, 41, 41))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(user_nome_label)
+                                                                        .addComponent(user_nome,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                200,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGap(18, 18, 18)
+                                                                .addGroup(layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(user_email_label)
+                                                                        .addComponent(user_email,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                200,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addComponent(jLabel1)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addGroup(layout.createSequentialGroup()
+                                                                                .addGroup(layout.createParallelGroup(
+                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(user_fone_label)
+                                                                                        .addComponent(user_fone,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                200,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addGap(18, 18, 18)
+                                                                                .addGroup(layout.createParallelGroup(
+                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(user_cpf,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                200,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(user_cpf_label)))
+                                                                        .addGroup(layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                false)
+                                                                                .addGroup(
+                                                                                        javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                        layout.createSequentialGroup()
+                                                                                                .addComponent(
+                                                                                                        user_senha,
+                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                        200,
+                                                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                .addGap(18, 18, 18)
+                                                                                                .addComponent(
+                                                                                                        user_salario))
+                                                                                .addGroup(
+                                                                                        javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                        layout.createSequentialGroup()
+                                                                                                .addGroup(layout
+                                                                                                        .createParallelGroup(
+                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                        .addComponent(
+                                                                                                                user_endereco_label)
+                                                                                                        .addComponent(
+                                                                                                                user_endereco,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                200,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                .addGap(18, 18, 18)
+                                                                                                .addGroup(layout
+                                                                                                        .createParallelGroup(
+                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                        .addComponent(
+                                                                                                                user_numHoras,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                200,
+                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                        .addComponent(
+                                                                                                                user_numHoras_label)
+                                                                                                        .addComponent(
+                                                                                                                user_salario_label)))))
+                                                                .addGap(18, 18, 18)
+                                                                .addGroup(layout.createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(user_funcao_label)
+                                                                        .addComponent(user_funcao_colaborador)
+                                                                        .addComponent(user_funcao_gestor)
+                                                                        .addComponent(user_funcao_adm))))
+                                                .addContainerGap(7, Short.MAX_VALUE)))));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(title)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(user_funcao_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(user_funcao_colaborador))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(user_nome_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(user_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(user_email_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(user_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(user_fone_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(user_fone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(user_cpf_label)
-                            .addComponent(user_funcao_gestor))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(user_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(user_funcao_adm))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(user_endereco_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(user_endereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(user_numHoras_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(user_numHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(user_salario_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(user_salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(user_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(title)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(user_nome_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(user_nome, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(user_email_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(user_email, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(11, 11, 11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(user_fone_label)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(user_fone,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(user_cpf_label)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(user_cpf,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(user_endereco_label)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(user_endereco,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(user_numHoras_label)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(user_numHoras,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(user_funcao_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(user_funcao_colaborador)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(user_funcao_gestor)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(user_funcao_adm)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel1)
+                                        .addComponent(user_salario_label))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(user_senha, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(user_salario, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btn_cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 25,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(17, 17, 17)));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void user_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_senhaActionPerformed
+    private void user_senhaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_user_senhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_user_senhaActionPerformed
+    }// GEN-LAST:event_user_senhaActionPerformed
+
+    private void user_funcao_colaboradorActionPerformed(ActionEvent evt) {// GEN-FIRST:event_user_funcao_colaboradorActionPerformed
+        if (this.infoColaborador.getFuncao() != "colaborador") {
+            this.infoColaborador.setFuncao("colaborador");
+        }
+    }// GEN-LAST:event_user_funcao_colaboradorActionPerformed
+
+    private void user_funcao_gestorActionPerformed(ActionEvent evt) {// GEN-FIRST:event_user_funcao_gestorActionPerformed
+        if (this.infoColaborador.getFuncao() != "gestor") {
+            this.infoColaborador.setFuncao("gestor");
+        }
+    }// GEN-LAST:event_user_funcao_gestorActionPerformed
+
+    private void user_funcao_admActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_user_funcao_admActionPerformed
+        if (this.infoColaborador.getFuncao() != "admin") {
+            this.infoColaborador.setFuncao("admin");
+        }
+    }// GEN-LAST:event_user_funcao_admActionPerformed
 
     private void user_nomeActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_user_nomeActionPerformed
         // TODO add your handling code here:
@@ -327,18 +429,6 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
     private void user_emailActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_user_emailActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_user_emailActionPerformed
-
-    private void user_funcao_colaboradorActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_user_funcao_colaboradorActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_user_funcao_colaboradorActionPerformed
-
-    private void user_funcao_gestorActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_user_funcao_gestorActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_user_funcao_gestorActionPerformed
-
-    private void user_funcao_admActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_user_funcao_admActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_user_funcao_admActionPerformed
 
     private void user_foneActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_user_foneActionPerformed
         // TODO add your handling code here:
@@ -401,6 +491,12 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         String endereco = user_endereco.getText();
 
         /**
+         * Registro de Endereço do Colaborador
+         */
+        char[] tempSenha = user_senha.getPassword();
+        String senha = new String(tempSenha);
+
+        /**
          * Registro do Número de Horas do Colaborador
          */
         int numHoras = Integer.parseInt(user_numHoras.getText());
@@ -410,17 +506,15 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
          */
         Double salario = Double.valueOf(user_salario.getText());
 
-        Colaboradores p = new Colaboradores();
-        p.setNome(nome);
-        p.setEmail(email);
-        p.setFone(fone);
-        p.setCpf(cpf);
-        p.setFuncao("teste");
-        p.setEndereco(endereco);
-        p.setSalario(salario);
-        p.setNumHoras(numHoras);
+        this.infoColaborador.setNome(nome);
+        this.infoColaborador.setEmail(email);
+        this.infoColaborador.setFone(fone);
+        this.infoColaborador.setCpf(cpf);
+        this.infoColaborador.setEndereco(endereco);
+        this.infoColaborador.setSalario(salario);
+        this.infoColaborador.setNumHoras(numHoras);
 
-        p.inserir("Teste@22");
+        this.infoColaborador.inserir(senha);
 
         System.out.println("CRIAR");
         System.out.println("new nome: " + nome);
@@ -428,7 +522,7 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
     }// GEN-LAST:event_btn_cadastrarActionPerformed
 
     /**
-     * Botão de Cadastro de Novos Usuários
+     * Botão de Atualização de Novos Usuários
      * 
      * @param evt
      */
