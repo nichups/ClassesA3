@@ -29,13 +29,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="telaExcTarefa" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jToggleButton1" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="telaExcOcor" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jToggleButton2" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="telaExcColab" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="TelaExcEquipe" min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
@@ -48,7 +48,7 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jTextField1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="telaExcID" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -60,15 +60,15 @@
               <Component id="jLabel1" min="-2" pref="70" max="-2" attributes="0"/>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="telaExcTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="telaExcOcor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="telaExcColab" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TelaExcEquipe" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+              <Component id="telaExcID" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -83,22 +83,22 @@
         <Property name="text" type="java.lang.String" value="Oque deseja excluir?"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="telaExcTarefa">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tarefa"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+    <Component class="javax.swing.JToggleButton" name="telaExcOcor">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ocorr&#xea;ncia"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="TelaExcEquipe">
       <Properties>
         <Property name="text" type="java.lang.String" value="Equipe"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+    <Component class="javax.swing.JToggleButton" name="telaExcColab">
       <Properties>
         <Property name="text" type="java.lang.String" value="Colaborador"/>
       </Properties>
@@ -108,7 +108,7 @@
         <Property name="text" type="java.lang.String" value="Id do que deseja excluir"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="telaExcID">
       <Properties>
         <Property name="text" type="java.lang.String" value="Insira o ID aqui"/>
       </Properties>
