@@ -4,7 +4,7 @@
  */
 package controller;
 
-import connection.Session;
+import com.ragnarok.Session;
 import model.Colaboradores;
 import java.awt.event.ActionEvent;
 

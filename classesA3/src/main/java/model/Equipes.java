@@ -4,7 +4,7 @@
  */
 package model;
 
-import connection.ConnectionFactory;
+import com.ragnarok.ConnectionFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -50,11 +50,18 @@ public class Equipes {
      * @return
      */
     @SuppressWarnings("empty-statement")
-    public Object[][] getColabDisp(int codigo) {
+    public String[][] getColabDisp(int codigo) {
         /**
          * Operação realizada pela função
          */
         char oper;
+        int cols, rowCount, iCount, row, i;
+        String sql;
+        String[][] res;
+
+        ConnectionFactory factory;
+        PreparedStatement psCount, ps;
+        ResultSet rsCount, rs;
 
         if (codigo == 0) {
             oper = 'C';
@@ -63,48 +70,49 @@ public class Equipes {
         }
 
         // 1: Definir o comando SQL
-        String sql = "SELECT c.id AS colab_id, c.nome AS colab_nome, IFNULL(cc.id,0) AS cntrl_id, IFNULL(e.id,0) AS equipe_id FROM Colaboradores AS c LEFT JOIN ControleColaboradores AS cc ON cc.colaboradores_id=c.id LEFT JOIN Equipes AS e ON e.id=cc.equipes_id AND e.data_prazo < CURRENT_DATE() HAVING cntrl_id=0 AND equipe_id=0";
+        sql = "SELECT r.colab_id, r.colab_nome FROM (SELECT c.id AS colab_id, c.nome AS colab_nome, IFNULL(cc.id,0) AS cntrl_id, IFNULL(e.id,0) AS equipe_id FROM Colaboradores AS c LEFT JOIN ControleColaboradores AS cc ON cc.colaboradores_id=c.id LEFT JOIN Equipes AS e ON e.id=cc.equipes_id AND e.data_prazo < CURRENT_DATE() HAVING cntrl_id=0 AND equipe_id=0) AS r;";
         // 2: Abrir uma conexão
-        ConnectionFactory factory = new ConnectionFactory();
+        factory = new ConnectionFactory();
         try (Connection c = factory.obtemConexao()) {
-            // 3: Pré compila o comando
-            PreparedStatement ps = c.prepareStatement(sql);
-            // 4: Define os valores pela posição (SEM VALORES)
-            // 5: Executa o comando
-            ResultSet rs = ps.executeQuery();
-            // 6: Conversão de valores
-            // if (!rs.last()) { // If false, the result set is empty.
-            // System.out.println("Empty query");
-            // return new Object[][]{
-            // {null, null, null, null}
-            // };
-            // }
 
-            // call only once
-            int cols = rs.getMetaData().getColumnCount();
-            int row = 0;
-            // better add performance
-            Object[] y = new Object[cols];
-            Object[] x = new Object[row];
-            while (rs.next()) {
-                for (int i = 0; i < cols; i++) {
-                    y[i] = rs.getObject(i + 1);
+            // Processos de tratamento da informação vinda do banco
+            psCount = c.prepareStatement(sql);
+            rsCount = psCount.executeQuery();
+
+            // Cálculo de tamanho da matriz
+            cols = rsCount.getMetaData().getColumnCount();
+            rowCount = 0;
+            iCount = 0;
+            while (rsCount.next()) {
+                for (iCount = 0; iCount < cols;) {
+                    iCount++;
                 }
-                x[row] = y;
+                rowCount++;
+            }
+
+            // Processos de tratamento da informação vinda do banco
+            ps = c.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            // Formulação do array baseado no cálculo
+            row = 0;
+            i = 0;
+            res = new String[rowCount][iCount];
+            while (rs.next()) {
+                for (i = 0; i < cols; i++) {
+                    res[row][i] = rs.getString(i + 1);
+                    System.out.println(rs.getString(i + 1));
+                }
                 row++;
             }
-            Object[] mt = new Object[0];
-            mt[0] = x;
-            return new Object[][] {
-                    mt
-            };
+            return res;
         } catch (Exception e) {
             // 7: Validação de erro
             e.printStackTrace();
         }
 
-        return new Object[][] {
-                { "teste2", null, null, null }
+        return new String[][] {
+                { null, null, null, null }
         };
     }
 

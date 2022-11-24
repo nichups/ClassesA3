@@ -7,8 +7,10 @@
 /**
  * Importação de bibliotecas chaves
  */
-import connection.ConnectionFactory;
+import com.ragnarok.ConnectionFactory;
 import controller.ColaboradoresFormulario;
+import controller.GestaoEquipes;
+
 import javax.swing.JOptionPane;
 
 public class Teste {
@@ -39,6 +41,10 @@ public class Teste {
                     ConnectionFactory connect = new ConnectionFactory();
                     connect.testConnection();
                     break;
+                case 12: {
+                    new GestaoEquipes().setVisible(true);
+                    break;
+                }
                 case 0:
                     break;
                 default:
