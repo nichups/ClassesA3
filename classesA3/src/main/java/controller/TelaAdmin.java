@@ -1,14 +1,14 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package controller;
 
 /**
  *
- * @author henri
+ * @author Victor
  */
-public class TelaAdmin extends javax.swing.JPanel {
+public class TelaAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaAdmin
@@ -26,104 +26,163 @@ public class TelaAdmin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        btnEquipe2 = new javax.swing.JButton();
         btnColab = new javax.swing.JButton();
         btnEquipe = new javax.swing.JButton();
         btnPrjt = new javax.swing.JButton();
         jLabelText = new javax.swing.JLabel();
         btnTarefas = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
+        btnColab1 = new javax.swing.JButton();
+        btnEquipe1 = new javax.swing.JButton();
+        btnPrjt1 = new javax.swing.JButton();
+        btnTarefas1 = new javax.swing.JButton();
 
-        btnColab.setText("Colaboradores");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        btnEquipe2.setText("EXCLUIR");
+        btnEquipe2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEquipe2ActionPerformed(evt);
+            }
+        });
+
+        btnColab.setText("Cadastro Colaboradores");
         btnColab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnColabActionPerformed(evt);
             }
         });
 
-        btnEquipe.setText("Equipes");
+        btnEquipe.setText("Cadastro Equipes");
         btnEquipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEquipeActionPerformed(evt);
             }
         });
 
-        btnPrjt.setText("Projeto");
+        btnPrjt.setText("Cadastro Projeto");
 
         jLabelText.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelText.setText("Central de controle Administrador");
 
-        btnTarefas.setText("Tarefas");
+        btnTarefas.setText("Cadastro Tarefas");
 
         jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(btnColab)
+        btnColab1.setText("Atualização Colaboradores");
+        btnColab1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnColab1ActionPerformed(evt);
+            }
+        });
+
+        btnEquipe1.setText("Atualização Equipes");
+        btnEquipe1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEquipe1ActionPerformed(evt);
+            }
+        });
+
+        btnPrjt1.setText("Atualização Projeto");
+
+        btnTarefas1.setText("Atualização Tarefas");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnColab1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnColab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEquipe, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnEquipe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEquipe1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
-                        .addComponent(btnPrjt, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnPrjt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnPrjt, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnTarefas, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabelText))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnTarefas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnTarefas1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnEquipe2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(336, 336, 336))
+                    .addComponent(jLabelText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(177, 177, 177)))
+                .addGap(15, 15, 15))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addComponent(jLabelText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnColab, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                    .addComponent(btnEquipe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPrjt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnTarefas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnPrjt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTarefas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnColab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEquipe, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnTarefas1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                    .addComponent(btnColab1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPrjt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEquipe1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(13, 13, 13)
+                .addComponent(btnEquipe2, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEquipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipeActionPerformed
+    private void btnEquipe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipe2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEquipeActionPerformed
+    }//GEN-LAST:event_btnEquipe2ActionPerformed
 
     private void btnColabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColabActionPerformed
-         new ColaboradoresFormulario('C').setVisible(true);
+        new ColaboradoresFormulario('C').setVisible(true);
     }//GEN-LAST:event_btnColabActionPerformed
 
+    private void btnEquipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipeActionPerformed
+        new GestaoEquipes('C').setVisible(true);
+    }//GEN-LAST:event_btnEquipeActionPerformed
+
+    private void btnColab1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColab1ActionPerformed
+        new ColaboradoresFormulario('A').setVisible(true);
+    }//GEN-LAST:event_btnColab1ActionPerformed
+
+    private void btnEquipe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEquipe1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEquipe1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnColab;
+    private javax.swing.JButton btnColab1;
     private javax.swing.JButton btnEquipe;
+    private javax.swing.JButton btnEquipe1;
+    private javax.swing.JButton btnEquipe2;
     private javax.swing.JButton btnPrjt;
+    private javax.swing.JButton btnPrjt1;
     private javax.swing.JButton btnTarefas;
+    private javax.swing.JButton btnTarefas1;
     private javax.swing.JLabel jLabelText;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

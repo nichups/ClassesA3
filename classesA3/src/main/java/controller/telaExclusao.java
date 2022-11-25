@@ -8,12 +8,12 @@ package controller;
  *
  * @author victo
  */
-public class telaExclusao extends javax.swing.JFrame {
+public class TelaExclusao extends javax.swing.JFrame {
 
     /**
      * Creates new form telaExclusao
      */
-    public telaExclusao() {
+    public TelaExclusao() {
         initComponents();
     }
 
@@ -35,7 +35,7 @@ public class telaExclusao extends javax.swing.JFrame {
         deleteColab = new javax.swing.JButton();
         deleteProjeto = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -8,6 +8,8 @@ import com.ragnarok.Session;
 import model.Colaboradores;
 import java.awt.event.ActionEvent;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Victor
@@ -33,8 +35,9 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
     }
 
     /**
-     * # Atributo de validação de ação no formulário - C = criar usuário; - A =
-     * alterar usuário;
+     * # Atributo de validação de ação no formulário
+     * - C = criar;
+     * - A = alterar;
      */
     private char oper = 'C';
 
@@ -559,6 +562,8 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
      * @param evt
      */
     private void btn_cadastrarAtualizarActionPerformed(java.awt.event.ActionEvent evt) {
+        int id = Integer.parseInt(JOptionPane.showInputDialog("Indique o Id do do usuário:"));
+
         /**
          * Registro do Nome do Colaborador
          */
@@ -608,7 +613,7 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         this.infoColaborador.setSalario(salario);
         this.infoColaborador.setNumHoras(numHoras);
 
-        this.infoColaborador.atualizar(2);
+        this.infoColaborador.atualizar(id);
 
         System.out.println("ATUALIZAR");
         System.out.println("new nome: " + nome);
