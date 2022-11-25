@@ -86,11 +86,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Tarefa / Ocorr&#xea;ncia"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteTarefaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="deleteEquipe">
       <Properties>
         <Property name="text" type="java.lang.String" value="Equipe"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteEquipeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -114,11 +120,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Colaborador"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteColabActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="deleteProjeto">
       <Properties>
         <Property name="text" type="java.lang.String" value="Projeto"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteProjetoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -9,8 +9,10 @@ package com.ragnarok;
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Properties;
+import javax.swing.JOptionPane;
 
 /**
  * Classe de conexão local ao banco de dados
@@ -31,7 +33,7 @@ public class ConnectionFactory {
 
     /**
      * Método que estabelece conexão com o banco de dados
-     * 
+     *
      * @return null|Connection error=null
      */
     public Connection obtemConexao() {
@@ -67,5 +69,31 @@ public class ConnectionFactory {
             ex.printStackTrace();
         }
 
+    }
+
+    public void deletar(int id, String table) {
+        // 1: Definir o comando SQL
+        String sql = "DELETE FROM `" + table + "` WHERE `id`=?";
+        System.out.println("id: " + id + " / table: " + table + " / sql: " + sql);
+        // 2: Abrir uma conexão
+        ConnectionFactory factory = new ConnectionFactory();
+        try ( Connection c = factory.obtemConexao()) {
+            // 3: Pré compila o comando
+            PreparedStatement ps = c.prepareStatement(sql);
+            // 4: Define os valores pela posição
+            ps.setInt(1, id);
+            // 5: Executa o comando
+            ps.execute();
+            // 6: Finaliza o comando
+            ps.close();
+            // 6.1: Mostra mensagem caso criado
+            if (c != null) {
+                JOptionPane.showMessageDialog(null, "Campo deletado com sucesso");
+            }
+        } catch (Exception e) {
+            // 7: Validação de erro
+            JOptionPane.showMessageDialog(null, "Houve um erro ao deletar o campo");
+            e.printStackTrace();
+        }
     }
 }
