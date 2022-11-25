@@ -52,6 +52,7 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        System.out.println("Operação Solicitada: " + this.oper);
 
         user_funcao_group = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
@@ -97,7 +98,11 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         title.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        title.setText("Cadastro de Usuários");
+        if (this.oper == 'C') {
+            title.setText("Cadastro de Usuários");
+        } else if (this.oper == 'A') {
+            title.setText("Atualização de Cadastro");
+        }
 
         user_nome.setText("Insira o nome do usuário");
         user_nome.addActionListener(new java.awt.event.ActionListener() {
@@ -206,12 +211,21 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
 
         btn_cancelar.setText("CANCELAR");
 
-        btn_cadastrar.setText("CADASTRAR");
-        btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cadastrarActionPerformed(evt);
-            }
-        });
+        if (this.oper == 'A') {
+            btn_cadastrar.setText("ATUALIZAR");
+            btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn_cadastrarAtualizarActionPerformed(evt);
+                }
+            });
+        } else if (this.oper == 'C') {
+            btn_cadastrar.setText("CADASTRAR");
+            btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btn_cadastrarActionPerformed(evt);
+                }
+            });
+        }
 
         user_senha.setText("jPasswordField1");
         user_senha.addActionListener(new java.awt.event.ActionListener() {
@@ -571,6 +585,12 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
         String endereco = user_endereco.getText();
 
         /**
+         * Registro de Endereço do Colaborador
+         */
+        char[] tempSenha = user_senha.getPassword();
+        String senha = new String(tempSenha);
+
+        /**
          * Registro do Número de Horas do Colaborador
          */
         int numHoras = Integer.parseInt(user_numHoras.getText());
@@ -580,17 +600,16 @@ public class ColaboradoresFormulario extends javax.swing.JFrame {
          */
         Double salario = Double.valueOf(user_salario.getText());
 
-        Colaboradores p = new Colaboradores();
-        p.setNome(nome);
-        p.setEmail(email);
-        p.setFone(fone);
-        p.setCpf(cpf);
-        p.setFuncao("teste");
-        p.setEndereco(endereco);
-        p.setSalario(salario);
-        p.setNumHoras(numHoras);
+        this.infoColaborador.setNome(nome);
+        this.infoColaborador.setEmail(email);
+        this.infoColaborador.setFone(fone);
+        this.infoColaborador.setCpf(cpf);
+        this.infoColaborador.setEndereco(endereco);
+        this.infoColaborador.setSalario(salario);
+        this.infoColaborador.setNumHoras(numHoras);
 
-        // p.atualizar("Teste@22");
+        this.infoColaborador.atualizar(2);
+
         System.out.println("ATUALIZAR");
         System.out.println("new nome: " + nome);
         System.out.println("new salario: " + salario);

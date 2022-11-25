@@ -284,7 +284,7 @@ public class Colaboradores {
         String sql = "INSERT INTO Colaboradores (nome, email, fone, cpf, funcao, endereco, salario, senha, numHoras) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         // 2: Abrir uma conexão
         ConnectionFactory factory = new ConnectionFactory();
-        try ( Connection c = factory.obtemConexao()) {
+        try (Connection c = factory.obtemConexao()) {
             // 3: Pré compila o comando
             PreparedStatement ps = c.prepareStatement(sql);
             // 4: Define os valores pela posição
@@ -308,6 +308,44 @@ public class Colaboradores {
         } catch (Exception e) {
             // 7: Validação de erro
             JOptionPane.showMessageDialog(null, "Houve um erro ao criar a colaborador");
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Método de atualização de usuário no banco de dados
+     * 
+     * @param id
+     */
+    public void atualizar(int id) {
+        // 1: Definir o comando SQL
+        String sql = "UPDATE `Colaboradores` SET `nome`=?,`email`=?,`fone`=?,`cpf`=?,`funcao`=?,`endereco`=?,`salario`=?,`numHoras`=? WHERE `id`=?";
+        // 2: Abrir uma conexão
+        ConnectionFactory factory = new ConnectionFactory();
+        try (Connection c = factory.obtemConexao()) {
+            // 3: Pré compila o comando
+            PreparedStatement ps = c.prepareStatement(sql);
+            // 4: Define os valores pela posição
+            ps.setString(1, this.nome);
+            ps.setString(2, this.email);
+            ps.setString(3, this.fone);
+            ps.setString(4, this.cpf);
+            ps.setString(5, this.funcao);
+            ps.setString(6, this.endereco);
+            ps.setDouble(7, this.salario);
+            ps.setInt(8, this.numHoras);
+            ps.setInt(9, id);
+            // 5: Executa o comando
+            ps.execute();
+            // 6: Finaliza o comando
+            ps.close();
+            // 6.1: Mostra mensagem caso criado
+            if (c != null) {
+                JOptionPane.showMessageDialog(null, "Colaborador atualizado com sucesso");
+            }
+        } catch (Exception e) {
+            // 7: Validação de erro
+            JOptionPane.showMessageDialog(null, "Houve um erro ao atualizar a colaborador");
             e.printStackTrace();
         }
     }
