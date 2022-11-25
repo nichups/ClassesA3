@@ -349,4 +349,30 @@ public class Colaboradores {
             e.printStackTrace();
         }
     }
+
+    public void delete(int id) {
+        // 1: Definir o comando SQL
+        String sql = "DELETE FROM `Colaboradores` WHERE `id`=?";
+        // 2: Abrir uma conexão
+        ConnectionFactory factory = new ConnectionFactory();
+        try (Connection c = factory.obtemConexao()) {
+            // 3: Pré compila o comando
+            PreparedStatement ps = c.prepareStatement(sql);
+            // 4: Define os valores pela posição
+            ps.setInt(1, id);
+            // 5: Executa o comando
+            ps.execute();
+            // 6: Finaliza o comando
+            ps.close();
+            // 6.1: Mostra mensagem caso criado
+            if (c != null) {
+                JOptionPane.showMessageDialog(null, "Colaborador deletado com sucesso");
+            }
+        } catch (Exception e) {
+            // 7: Validação de erro
+            JOptionPane.showMessageDialog(null, "Houve um erro ao deletar colaborador");
+            e.printStackTrace();
+        }
+    }
+
 }

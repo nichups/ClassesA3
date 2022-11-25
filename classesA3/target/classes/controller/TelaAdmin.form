@@ -29,34 +29,38 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnColab1" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnColab" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="btnAttColab" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCadColab" alignment="1" min="-2" pref="171" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnEquipe" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnEquipe1" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="btnCadEquipe" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnAttEquipe" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnPrjt1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnPrjt" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="btnAttPrjt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnCadPrjt" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnTarefas" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnTarefas1" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="btnCadTarefas" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnAttTarefas" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="btnEquipe2" min="-2" pref="107" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabelText" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jSeparator1" min="-2" pref="425" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnDelete" min="-2" pref="107" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jSeparator1" min="-2" pref="425" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -72,51 +76,51 @@
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="btnPrjt" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnTarefas" alignment="1" max="32767" attributes="0"/>
-                  <Component id="btnColab" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnEquipe" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="btnCadPrjt" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnCadTarefas" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnCadColab" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnCadEquipe" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="btnTarefas1" alignment="0" pref="75" max="32767" attributes="0"/>
-                  <Component id="btnColab1" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnPrjt1" alignment="1" max="32767" attributes="0"/>
-                  <Component id="btnEquipe1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnAttTarefas" alignment="0" pref="75" max="32767" attributes="0"/>
+                  <Component id="btnAttColab" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnAttPrjt" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnAttEquipe" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-              <Component id="btnEquipe2" pref="55" max="32767" attributes="0"/>
+              <Component id="btnDelete" pref="55" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btnEquipe2">
+    <Component class="javax.swing.JButton" name="btnDelete">
       <Properties>
         <Property name="text" type="java.lang.String" value="EXCLUIR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEquipe2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnColab">
+    <Component class="javax.swing.JButton" name="btnCadColab">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastro Colaboradores"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnColabActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadColabActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnEquipe">
+    <Component class="javax.swing.JButton" name="btnCadEquipe">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastro Equipes"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEquipeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadEquipeActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPrjt">
+    <Component class="javax.swing.JButton" name="btnCadPrjt">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastro Projeto"/>
       </Properties>
@@ -130,7 +134,7 @@
         <Property name="text" type="java.lang.String" value="Central de controle Administrador"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnTarefas">
+    <Component class="javax.swing.JButton" name="btnCadTarefas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastro Tarefas"/>
       </Properties>
@@ -142,28 +146,28 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnColab1">
+    <Component class="javax.swing.JButton" name="btnAttColab">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atualiza&#xe7;&#xe3;o Colaboradores"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnColab1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAttColabActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnEquipe1">
+    <Component class="javax.swing.JButton" name="btnAttEquipe">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atualiza&#xe7;&#xe3;o Equipes"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEquipe1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAttEquipeActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPrjt1">
+    <Component class="javax.swing.JButton" name="btnAttPrjt">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atualiza&#xe7;&#xe3;o Projeto"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnTarefas1">
+    <Component class="javax.swing.JButton" name="btnAttTarefas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atualiza&#xe7;&#xe3;o Tarefas"/>
       </Properties>
