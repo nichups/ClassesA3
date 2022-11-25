@@ -18,7 +18,7 @@ import java.util.Properties;
 public class ConnectionFactory {
 
     private String user = "root";
-    private String pass = "Tiger";
+    private String pass = "";
     private String host = "localhost";
     private String port = "3306";
     private String bd = "usjt_ragnarok";
