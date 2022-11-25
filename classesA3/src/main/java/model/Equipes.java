@@ -49,12 +49,7 @@ public class Equipes {
      * @param codigo
      * @return
      */
-    @SuppressWarnings("empty-statement")
-    public String[][] getColabDisp(int codigo) {
-        /**
-         * Operação realizada pela função
-         */
-        char oper;
+    public String[][] getColabDisp() {
         int cols, rowCount, iCount, row, i;
         String sql;
         String[][] res;
@@ -62,12 +57,6 @@ public class Equipes {
         ConnectionFactory factory;
         PreparedStatement psCount, ps;
         ResultSet rsCount, rs;
-
-        if (codigo == 0) {
-            oper = 'C';
-        } else {
-            oper = 'A';
-        }
 
         // 1: Definir o comando SQL
         sql = "SELECT r.colab_id, r.colab_nome FROM (SELECT c.id AS colab_id, c.nome AS colab_nome, IFNULL(cc.id,0) AS cntrl_id, IFNULL(e.id,0) AS equipe_id FROM Colaboradores AS c LEFT JOIN ControleColaboradores AS cc ON cc.colaboradores_id=c.id LEFT JOIN Equipes AS e ON e.id=cc.equipes_id AND e.data_prazo < CURRENT_DATE() HAVING cntrl_id=0 AND equipe_id=0) AS r;";

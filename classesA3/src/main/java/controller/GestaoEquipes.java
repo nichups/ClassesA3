@@ -88,7 +88,7 @@ public class GestaoEquipes extends javax.swing.JFrame {
         jLabel6.setText("Listagem de Funcionários disponíveis");
 
         colabTable.setModel(new javax.swing.table.DefaultTableModel(
-                this.infoEquipes.getColabDisp(0),
+                this.infoEquipes.getColabDisp(),
                 new String[] {
                         "Código", "Nome"
                 }) {
@@ -215,6 +215,7 @@ public class GestaoEquipes extends javax.swing.JFrame {
                                 .addContainerGap(27, Short.MAX_VALUE)));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadBtnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cadBtnAtualizarActionPerformed

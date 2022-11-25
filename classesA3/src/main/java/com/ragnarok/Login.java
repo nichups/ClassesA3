@@ -117,8 +117,6 @@ public class Login extends javax.swing.JFrame {
         session.setSession(1);
 
         new TelaAdmin().setVisible(true);
-        TelaAdmin a = new TelaAdmin();
-        a.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed
 
     /**
