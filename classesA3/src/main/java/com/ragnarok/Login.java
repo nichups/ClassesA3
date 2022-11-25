@@ -5,6 +5,7 @@
 package com.ragnarok;
 
 import controller.ColaboradoresFormulario;
+import controller.TelaAdmin;
 
 /**
  *
@@ -108,7 +109,7 @@ public class Login extends javax.swing.JFrame {
         Session session = Session.getInstance();
         session.setSession(1);
 
-        new ColaboradoresFormulario('C').setVisible(true);
+        new TelaAdmin().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
